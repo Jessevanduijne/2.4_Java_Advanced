@@ -3,7 +3,7 @@ package vanduijne.jesse.beerapi.model;
 public class Beer {
 
     private long id;
-    private String brand;
+    private String brewery;
     private String type;
     private String name;
     private double percentage;
@@ -12,9 +12,9 @@ public class Beer {
 
     }
 
-    public Beer(long id, String brand, String type, String name, double percentage) {
+    public Beer(long id, String brewery, String type, String name, double percentage) {
         this.id = id;
-        this.brand = brand;
+        this.brewery = brewery;
         this.type = type;
         this.name = name;
         this.percentage = percentage;
@@ -29,12 +29,12 @@ public class Beer {
         this.id = id;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getBrewery() {
+        return brewery;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setBrand(String brewery) {
+        this.brewery = brewery;
     }
 
     public String getType() {
@@ -64,9 +64,9 @@ public class Beer {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Guitar{");
+        final StringBuffer sb = new StringBuffer("Beer{");
         sb.append("id=").append(id);
-        sb.append(", brand='").append(brand).append('\'');
+        sb.append(", brewery='").append(brewery).append('\'');
         sb.append(", type=").append(type).append('\'');
         sb.append(", name=").append(name).append('\'');
         sb.append(", percentage='").append(percentage).append('\'');
