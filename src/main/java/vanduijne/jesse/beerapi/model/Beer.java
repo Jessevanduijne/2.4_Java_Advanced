@@ -73,9 +73,10 @@ public class Beer {
         final StringBuffer sb = new StringBuffer("Beer{");
         sb.append("id=").append(id);
         sb.append(", brewery='").append(brewery).append('\'');
-        sb.append(", type=").append(type).append('\'');
-        sb.append(", name=").append(name).append('\'');
-        sb.append(", percentage='").append(percentage).append('\'');
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", percentage=").append(percentage);
+        sb.append(", price=").append(price);
         sb.append('}');
         return sb.toString();
     }

@@ -23,7 +23,7 @@ public class BeerController {
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllBeers(){
         List<Beer> beers = beerService.getAllBeers();
-        return ResponseEntity.status(HttpStatus.OK).body(beers.toString());
+        return ResponseEntity.status(HttpStatus.OK).body(beers);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -37,10 +37,16 @@ public class BeerController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity brewBeer (@RequestBody Beer beer) {
         beerService.brewBeer(beer);
-        return ResponseEntity.status(HttpStatus.CREATED).body(beer.getId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(beer);
+    }
+
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteBeer (@PathVariable("id") long id) {
+        beerService.deleteBeer(id);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(id);
     }
 
     @RequestMapping(value = "{id}/value", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -52,12 +58,12 @@ public class BeerController {
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, params = "brewery")
     public ResponseEntity getBeerByBrewery(@RequestParam("brewery") String brewery){
         List<Beer> breweryBeers = beerService.getBeerByBrewery(brewery);
-        return ResponseEntity.status(HttpStatus.OK).body(breweryBeers.toString());
+        return ResponseEntity.status(HttpStatus.OK).body(breweryBeers);
     }
 
     @RequestMapping(value = "max", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getBeerMaxPercentage() {
         Beer heaviestBeer = beerService.getHeaviestBeer();
-        return ResponseEntity.status(HttpStatus.OK).body(heaviestBeer.toString());
+        return ResponseEntity.status(HttpStatus.OK).body(heaviestBeer);
     }
 }

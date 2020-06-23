@@ -54,4 +54,8 @@ public class BeerService {
                 .orElseThrow(NoSuchElementException::new);
         return heaviest;
     }
+
+    public void deleteBeer (long id) {
+        beerRepository.deleteById(id);
+    }
 }

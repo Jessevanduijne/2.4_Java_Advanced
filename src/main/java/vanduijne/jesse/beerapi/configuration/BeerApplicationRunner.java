@@ -33,7 +33,7 @@ public class BeerApplicationRunner implements ApplicationRunner {
                 Arrays.asList(
                 new Beer("Brouwerij 't IJ", "witbier", "IJwit",  6.5, 3.50),
                 new Beer("Brouwerij 't IJ", "triple", "Zatte", 8.0, 3.75),
-                new Beer("Brouwerij 't IJ", "dubbel", "Nate", 6.5, 3.20),
+                new Beer("Brouwerij 't IJ", "dubbel", "Natte", 6.5, 3.20),
                 new Beer( "Brouwerij 't IJ", "pale ale", "Flink", 4.5, 3.10),
                 new Beer("Uiltje", "IPA", "Bird of Prey", 5.8, 2.90)
         );
